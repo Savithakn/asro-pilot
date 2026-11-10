@@ -46,4 +46,4 @@ Cell 8 = outlier-token diagnosis, Cell 9 = registers control, Cells 10 and 10b =
 Seed = 0. See `requirements.txt`. Progress notes: [evidence_log.md](evidence_log.md).
 
 ## Author
-Dr Savitha K N (Mathematics; Fourier/wavelet analysis, optimisation)
+Dr Savitha K N (Mathematics; ML,AL, Transformers, RNN,CNN,Linear Algebra, Spectral Analysis, optimisation)
