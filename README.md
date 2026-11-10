@@ -14,7 +14,7 @@ or do nothing for the loss – and does this differ by layer?
 - [ ] v3: Pythia-160M / 410M
 
 ## First result
-![Figure 1](results/fig_prelim_concentration.png)
+![Figure 1](results/asro_results/fig_prelim_concentration.png)
 
 - Layers 9–11 of DINOv2-base collapse to stable rank ≈ 1. This is caused by ~3 high-norm
   patch tokens per image (21–53× the median norm). Removing them, or using registers
@@ -27,17 +27,17 @@ Captions for every figure: [results/figure_captions.md](results/figure_captions.
 
 | Figure | File | What it shows |
 | --- | --- | --- |
-| Figure 1 | [fig_prelim_concentration.png](results/fig_prelim_concentration.png) | Stable rank and outlier tokens, DINOv2-base vs registers (proposal version) |
-| Figure S1 | [pilot_v0.png](results/pilot_v0.png) | First pilot: top-8 singular values and top-1 energy share per layer |
-| Figure S2 | [pilot_v0_registers_comparison.png](results/pilot_v0_registers_comparison.png) | Draft of Figure 1 (same data) |
-| Figure S3 | [sample_images.png](results/sample_images.png) | Example input images |
+| Figure 1 | [fig_prelim_concentration.png](results/asro_results/fig_prelim_concentration.png) | Stable rank and outlier tokens, DINOv2-base vs registers (proposal version) |
+| Figure S1 | [pilot_v0.png](results/asro_results/pilot_v0.png) | First pilot: top-8 singular values and top-1 energy share per layer |
+| Figure S2 | [pilot_v0_registers_comparison.png](results/asro_results/pilot_v0_registers_comparison.png) | Draft of Figure 1 (same data) |
+| Figure S3 | [sample_images.png](results/asro_results/sample_images.png) | Example input images |
 
 | Data file | Contents |
 | --- | --- |
-| [pilot_v0_mean_singular_values.csv](results/pilot_v0_mean_singular_values.csv) | Mean sigma_i / ||H||_F, 12 layers x top-8 |
-| [pilot_v0_results.json](results/pilot_v0_results.json) | Top-1 energy share and stable rank per layer |
-| [pilot_v0_diagnostics.csv](results/pilot_v0_diagnostics.csv) | Token-norm ratios and stable rank (raw, centred, no CLS, no outliers) per layer |
-| [pilot_v0_registers_control.csv](results/pilot_v0_registers_control.csv) | Same diagnostics for DINOv2-with-registers |
+| [pilot_v0_mean_singular_values.csv](results/asro_results/pilot_v0_mean_singular_values.csv) | Mean sigma_i / ||H||_F, 12 layers x top-8 |
+| [pilot_v0_results.json](results/asro_results/pilot_v0_results.json) | Top-1 energy share and stable rank per layer |
+| [pilot_v0_diagnostics.csv](results/asro_results/pilot_v0_diagnostics.csv) | Token-norm ratios and stable rank (raw, centred, no CLS, no outliers) per layer |
+| [pilot_v0_registers_control.csv](results/asro_results/pilot_v0_registers_control.csv) | Same diagnostics for DINOv2-with-registers |
 
 ## How to run
 Open `notebooks/asro_pilot_v0.ipynb` in Google Colab (Runtime → T4 GPU) and run the cells in order:
@@ -46,4 +46,4 @@ Cell 8 = outlier-token diagnosis, Cell 9 = registers control, Cells 10 and 10b =
 Seed = 0. See `requirements.txt`. Progress notes: [evidence_log.md](evidence_log.md).
 
 ## Author
-Dr Savitha K N (Mathematics; ML, AL, Linear Algebra, Spectral Analysis, optimisation)
+Dr Savitha K N (Mathematics; Fourier/wavelet analysis, optimisation)
