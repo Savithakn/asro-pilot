@@ -1,22 +1,36 @@
 # Figure captions
 
-## Figure 1 – fig_prelim_concentration.png (proposal version)
-Spectral concentration in DINOv2-base (32 Imagenette validation images, seed 0).
-(a) Stable rank ||H||_F^2 / sigma_1^2 of the patch-token matrix per layer: an abrupt collapse
-at layers 9–11 (grey) disappears when ~3 high-norm outlier tokens per image are removed, or when
-registers are used (Darcet et al., ICLR 2024); concentration at the final layer persists in both
-models. (b) Ratio of the largest to the median token norm (log scale); dotted line = 10x threshold.
-Two distinct mechanisms motivate a per-layer, loss-aware correction.
+## Figure 1 – fig1_proposal_simple.png (proposal version)
+Stable rank ||H||_F^2 / sigma_1^2 of the patch-token matrix per layer (DINOv2-base, 32 Imagenette
+validation images, seed 0; 1 = all the energy in one direction). The standard model collapses
+abruptly at layers 9–11 (grey); the model with registers (Darcet et al., ICLR 2024) shows no
+collapse, but its final layer stays concentrated (stable rank 1.81). This points to at least two
+separate causes: (1) a few high-norm outlier tokens and (2) a direction shared by all tokens.
 
-## Figure S1 – pilot_v0.png (first pilot)
+## Figure S1 – fig_prelim_concentration.png (detailed version of Figure 1)
+(a) Stable rank of the patch-token matrix per layer for DINOv2-base, DINOv2-base with ~3
+high-norm outlier tokens per image removed, and DINOv2-base with registers: the collapse at
+layers 9–11 (grey) disappears when the outliers are removed (stable rank 3.8–4.3) or registers
+are used; concentration at the final layer persists. (b) Ratio of the largest to the median
+token norm (log scale); dotted line = 10x threshold.
+
+## Figure S2 – pilot_v0.png (first pilot)
 DINOv2-base, mean over 32 Imagenette validation images. (a) Top-8 singular values of the token
 matrix H (257 tokens x 768 features, including CLS) per layer, normalised by ||H||_F.
 (b) Top-1 energy share sigma_1^2 / ||H||_F^2 (red, ± 1 s.d. across images) and stable rank (blue).
 The top direction takes ~95% of the energy at layers 9–11.
 
-## Figure S2 – pilot_v0_registers_comparison.png (draft of Figure 1)
-Earlier version of Figure 1 with the same data; superseded by fig_prelim_concentration.png.
+## Figure S3 – rsvd_study.png (randomised SVD check)
+Relative error of the top-8 singular values from randomised SVD (Halko, Martinsson & Tropp, 2011;
+k = 8, oversampling p = 8) compared with the exact SVD, DINOv2-base layer 6, image 0, for 0, 1, 2
+and 4 power iterations. Each extra power iteration reduces the error by roughly 10x; with 2 power
+iterations all 8 values are within ~0.3%. Results for layers 6 and 9 on all 32 images:
+rsvd_study_summary.csv.
 
-## Figure S3 – sample_images.png
+## Figure S4 – sample_images.png
 The first 8 of the 32 Imagenette validation images used in the pilot (random selection, seed 0),
 with their class labels.
+
+## Draft – pilot_v0_registers_comparison.png
+Early version of Figure S1 with the same data, made by an earlier version of the notebook;
+superseded by fig_prelim_concentration.png and fig1_proposal_simple.png.
