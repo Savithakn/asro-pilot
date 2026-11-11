@@ -32,10 +32,10 @@ Detailed two-panel version (incl. token-norm ratios):
 [fig_prelim_concentration.png](results/asro_results/fig_prelim_concentration.png)
 
 ## Randomised SVD check
-With 2 power iterations, randomised SVD recovers the top-8 singular values of the token
-matrices at layers 6 and 9 (32 images) within ___% of the exact SVD; without power
-iterations the error is up to ~30%. Minimum cosine of the top direction: ___.
-So ASRO uses k = 8, q = 2.
+With 2 power iterations, randomised SVD (Halko et al., 2011) recovers the top-8 singular
+values of the token matrices at layers 6 and 9 (32 images) within 1% of the exact SVD on
+average (worst case 3.5%; 0.4% with 4 iterations), and the top direction almost exactly
+(cosine ≥ 0.9999). Without power iterations the error is up to 38%. So ASRO uses k = 8, q = 2.
 
 ## All figures and data
 Captions for every figure: [results/figure_captions.md](results/figure_captions.md)
