@@ -4,7 +4,8 @@
 - Ran: Cell 6 randomised SVD study (Halko et al., 2011), DINOv2-base layer 6, image 0, k = 8, p = 8
   - max rel. error of sigma_1–8: ~30% (q = 0), ~2.6% (q = 1), ~0.25% (q = 2), ~0.01% (q = 4)
   - each extra power iteration reduces the error ~10x; sigma_1 is most accurate (large spectral gap)
-- Ran: Cell 6b, layers 6 and 9, all 32 images, q = 2:
+- Ran: Cell 6b, layers 6 and 9, all 32 images, q = 2: mean rel. error 0.95% (L6), 0.61% (L9);
+  worst 3.5% (L6), 2.0% (L9); min cos(v1) = 0.9999 (both). q = 4: worst 0.41% / 0.12%.
   worst rel. error = ___ (layer 6), ___ (layer 9); min cos(v1) = ___ (layer 6), ___ (layer 9)
 - Decision: ASRO uses k = 8, q = 2 power iterations
 - Made: simple one-panel Figure 1 (Cell 10c) -> fig1_proposal_simple.png; old figure kept as Figure S1
