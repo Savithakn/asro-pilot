@@ -37,6 +37,17 @@ rsvd_study_summary.csv.
 The first 8 of the 32 Imagenette validation images used in the pilot (random selection, seed 0),
 with their class labels.
 
-## Draft – pilot_v0_registers_comparison.png
-Early version of Figure S1 with the same data, made by an earlier version of the notebook;
-superseded by fig_prelim_concentration.png and fig1_proposal_simple.png.
+## Figure S5 – fig_outlier_map_L10.png (outlier map)
+Layer 10 of DINOv2-base on the first 16 of the 32 images: patch tokens with norm > 10x the median
+of that image. Blue = top-left token, red = other outliers; the number in each title is the count
+of outliers in that image.
+
+## Figure S6 – fig_outlier_similarity_L10.png (are outliers on plain patches?)
+Similarity of each patch to its 4 neighbours (mean cosine similarity of pixels; 1 = plain area),
+layer 10: outlier patches (top-left token excluded) compared with normal patches. Outlier patches
+are more similar to their neighbours, i.e. they lie on plain, uniform regions.
+
+## Figure S7 – fig1b_detailed.png (detailed version of Figure 1b)
+Three of the 32 images with the outlier tokens at layer 10 (blue = top-left token, red = other
+outliers), and a bar chart of the similarity to neighbours for the other outliers versus all
+other patches (error bar = 95% bootstrap interval, token level).
