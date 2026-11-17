@@ -1,0 +1,5 @@
+model,group,accuracy,mean_loss
+standard,seen,0.8125,1.3583565950393677
+standard,new,0.828125,0.8388525247573853
+registers,seen,0.84375,1.280221939086914
+registers,new,0.921875,0.5276387929916382
