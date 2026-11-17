@@ -31,7 +31,6 @@ Pilot study for my MSCA Postdoctoral Fellowship 2027 proposal (working title: AS
 |---|---|
 | `notebooks/` | `asro_pilot_study.ipynb` – the complete pilot study (15 cells, run all) |
 | `results/pilot_study/` | Figures (`fig1a_stable_rank`, `fig1b_outliers`), CSV tables (A = concentration, B = harmful/useful, C = shifted images), `pilot_summary.md` |
-
 | `notebooks/` | `asro_pilot_study.ipynb` – complete pilot study; `asro_pathology_check.ipynb` – pathology check |
 | `results/` | `pilot_study/` and `pathology_check/` – figures, CSV tables and summaries |
 
