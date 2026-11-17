@@ -1,5 +1,14 @@
 # Evidence log
 
+## 2026-11-17 (Tue, W2) - pilot v1 + plainness fix (asro_pilot_v0.ipynb Cells 17-23)
+- Plainness (Cell 17): outlier patches median pixel std 0.03 vs 0.12; near-flat 40-45% vs 10% -> outliers sit on plain patches
+- Probe accuracy on the 32 pilot images: standard 100%, registers 97%
+- delta 1: removing direction 1-2 raises loss by 1.4-2.3 (standard, L8-10) and 4-6 (registers); accuracy drops to 9-59%
+- Harmful cases 1.6-4.3% (at noise level, tau = 95th percentile of random directions); delta 0.1: 92-94% neutral
+- Layer 12: removing direction 1 barely changes the loss (0.002 standard, 0.11 registers)
+- Conclusion: in-distribution, dominant directions are useful; harm must be tested under shift
+- Files: results/asro_results/pilot_v1_labels.csv, pilot_v1_summary.csv, pilot_v1_dL.png, pilot_v0_plainness_std.csv
+
 ## 2026-11-13 (W1, Fri)
 - Pilot notebook rerun in full (cells 1-17); reproduces earlier results exactly
   (stable rank 1.06-1.28 at L9-11, 2.59 at L12; rSVD q=2 mean error 0.95% (L6) / 0.61% (L9))
